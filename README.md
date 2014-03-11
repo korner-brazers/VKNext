@@ -12,7 +12,7 @@ VKNext 0.2
 Установка для Linux:<br>
 echo "deb http://debian.meebey.net/experimental/mono /" >> /etc/apt/sources.list<br>
 apt-get update<br>
-apt-get install mono-complete libphash0 libphash0-dev<br><br>
+apt-get install mono-complete libphash0 libphash0-dev<br>
 
 Сертификаты:<br>
 mozroots --import --machine --sync<br>
