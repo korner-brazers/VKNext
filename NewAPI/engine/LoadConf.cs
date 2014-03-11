@@ -212,7 +212,7 @@ namespace NewAPI.engine
                     AddVideo = new Regex("addvideo:([trueTRUE]+);").Match(account.Replace(" ", "").ToLower()).Groups[1].Value.Trim() == "true" ? true : false,
                     CreateDescVideo = new Regex("createdescvideo:([trueTRUE]+);").Match(account.Replace(" ", "").ToLower()).Groups[1].Value.Trim() == "true" ? true : false,
                     KeyAES = Keyaes.Trim() == "" ? null : Keyaes.Trim(),
-                    URL_Text = (gUtext[2].Value.Trim() != "" ? gUtext[3].Value + (gUtext[1].Value.Contains(@".") ? (gUtext[2].Value + gUtext[1].Value) : ("[" + gUtext[1].Value.Trim() + "|" + gUtext[2].Value.Trim() + "]")) : null)
+                    URL_Text = (gUtext[2].Value.Trim() != "" ? gUtext[1].Value.Contains(@".") ? (gUtext[3].Value.Replace("<br>", "\n") + gUtext[2].Value + gUtext[1].Value) : (gUtext[3].Value.Replace("<br>", "\n") + "[" + gUtext[1].Value.Trim() + "|" + gUtext[2].Value.Trim() + "]") : null)
                 });
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////

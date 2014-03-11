@@ -49,10 +49,10 @@ namespace NewAPI.engine
                                 foreach (InfoClass.GroupPost GroupPost in account.GroupPost)
                                 {
                                     //Получаем фотографии, опросы, аудио, видио и обрабатываем текст
-                                    string MessageURL = account.URL_Text != null ? account.URL_Text : "";
+                                    string MessageURL = account.URL_Text != null ? account.URL_Text: "";
                                     string KeyText = account.KeyText != 0 ? "\n" + ProcessingText.get(account.GroupKey, account.KeyText, account).Replace("\n\n", "\n") : MessageURL;
                                     string NewsText = GroupList.text ? news.Text : null;
-                                    string message = account.KeyWall != 0 ? (NewsText == null ? ProcessingText.get(account.GroupKey, account.KeyWall, account).Replace("\n\n", "\n") + MessageURL : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText)) : (NewsText == null ? KeyText : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText));
+                                    string message = account.KeyWall != 0 ? (NewsText == null ? ProcessingText.get(account.GroupKey, account.KeyWall, account).Replace("\n\n", "\n") : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText)) : (NewsText == null ? KeyText : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText));
                                     string attachments = new Attachments().get(ImgUrl, news, video, GroupList, GroupPost, account);
 
                                     //Публикуем новость и чистим ресурсы
