@@ -50,13 +50,13 @@ namespace NewAPI.engine
                                 {
                                     //Получаем фотографии, опросы, аудио, видио и обрабатываем текст
                                     string MessageURL = account.URL_Text != null ? account.URL_Text: "";
-                                    string KeyText = account.KeyText != 0 ? "\n" + ProcessingText.get(account.GroupKey, account.KeyText, account).Replace("\n\n", "\n") : MessageURL;
+                                    string KeyText = account.KeyText != 0 ? "\n" + ProcessingText.get(account.GroupKey, account.KeyText, account) : MessageURL;
                                     string NewsText = GroupList.text ? news.Text : null;
-                                    string message = account.KeyWall != 0 ? (NewsText == null ? ProcessingText.get(account.GroupKey, account.KeyWall, account).Replace("\n\n", "\n") : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText)) : (NewsText == null ? KeyText : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText));
+                                    string message = account.KeyWall != 0 ? (NewsText == null ? ProcessingText.get(account.GroupKey, account.KeyWall, account) : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText)) : (NewsText == null ? KeyText : (new TextReplace().get(NewsText, account.ReplaceTag) + KeyText));
                                     string attachments = new Attachments().get(ImgUrl, news, video, GroupList, GroupPost, account);
 
                                     //Публикуем новость и чистим ресурсы
-                                    new engine.VK_API.WallPost().put(GroupList, GroupPost, account, (message == null || message.Replace(" ", "").Trim() == "" ? null : Regex.Replace(Regex.Replace(message, @"\n +\n", "\n\n"), "[\n]+#", "\n#")).Replace("<br>", "\n"), attachments, news.post_id, news.source_id);
+                                    new engine.VK_API.WallPost().put(GroupList, GroupPost, account, (message == null || message.Replace(" ", "").Trim() == "" ? null : Regex.Replace(Regex.Replace(message, "[\n]+#", "\n#"), "\n +\n+", "\n\n")), attachments, news.post_id, news.source_id);
                                     attachments = null; message = null; NewsText = null; MessageURL = null; KeyText = null;
                                 }
                                 ImgUrl = null;

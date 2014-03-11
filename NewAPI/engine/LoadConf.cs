@@ -212,9 +212,8 @@ namespace NewAPI.engine
                     AddVideo = new Regex("addvideo:([trueTRUE]+);").Match(account.Replace(" ", "").ToLower()).Groups[1].Value.Trim() == "true" ? true : false,
                     CreateDescVideo = new Regex("createdescvideo:([trueTRUE]+);").Match(account.Replace(" ", "").ToLower()).Groups[1].Value.Trim() == "true" ? true : false,
                     KeyAES = Keyaes.Trim() == "" ? null : Keyaes.Trim(),
-                    URL_Text = gUtext[1].Value.Trim() != "" ? gUtext[1].Value.Trim() : null
+                    URL_Text = gUtext[1].Value.ToString().Trim() != "" ? gUtext[1].Value.ToString().Replace("<br>", "\n") : null
                 });
-
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
