@@ -1,8 +1,9 @@
-VKNext
+VKNext 0.2
 ======
-Скомпилированный проект находиться тут: NewAPI\bin\Debug
+Программа для граббинга групп Вконтакте, консольный проект для Linux.
 ======
-
+Скомпилированный проект находиться в папке: NewAPI\bin\Debug
+======
 Установка для windows 7/8: 
 Установить .NET Framework 4.5: http://www.microsoft.com/ru-ru/download/details.aspx?id=40779
 Установить vcredist_x86.exe который находиться в проекте или скачать с сайта "Распространяемые пакеты Visual C++ для Visual Studio 2013 x86 - http://www.microsoft.com/ru-ru/download/details.aspx?id=40784"
