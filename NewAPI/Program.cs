@@ -17,7 +17,6 @@ namespace NewAPI
             if (Environment.OSVersion.Platform.ToString().ToLower().Trim() == "unix")
                 Console.OutputEncoding = Encoding.UTF8;
 
-            Console.WriteLine("Старт программы..");
 
             //Проверка файлов и загрузка данных
             if (!Directory.Exists(conf.DirAccount))

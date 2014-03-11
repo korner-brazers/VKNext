@@ -18,15 +18,26 @@ namespace NewAPI.engine
             if (id == null || id.Trim() == "")
                 return "";
 
+            //Примерно 50 секунд на ожидание капчи
             for (int i = 0; i < 5; i++)
             {
-                Thread.Sleep(1000 * 5);
+                //Ждем 10 секунд и получаем значение
+                Thread.Sleep(1000 * 10);
                 string tmp = HttpGet(id);
 
+                //Капча не готова
                 if (tmp == null || tmp.ToUpper() == "CAPCHA_NOT_READY")
+                {
+                    tmp = null;
                     continue;
+                }
 
-                key = new Regex(@"[okOK]{2}\|([0-9a-zA-Z]+)").Match(tmp).Groups[1].Value;
+                //Получили капчу
+                if (new Regex(@"^[okOK]{2}\|([0-9a-zA-Z]+)$").Match(tmp).Success)
+                {
+                    key = new Regex(@"^[okOK]{2}\|([0-9a-zA-Z]+)$").Match(tmp).Groups[1].Value;
+                    break;
+                }
                 tmp = null;
             }
 
@@ -111,7 +122,7 @@ namespace NewAPI.engine
                 }
 
                 //Возвращаем результат 
-                return result.Trim() == "" ? null : result.Trim();
+                return result != null ? (result.Trim() == "" ? null : result.Trim()) : null;
             }
             catch
             {
