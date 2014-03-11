@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59E1C6DD-E8B5-4092-9208-DD612C11ADFE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewAPI</RootNamespace>
+    <AssemblyName>NewAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>256.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conf.cs" />
+    <Compile Include="engine\AES256.cs" />
+    <Compile Include="engine\Antigate.cs" />
+    <Compile Include="engine\Attachments.cs" />
+    <Compile Include="engine\CheckIMG.cs" />
+    <Compile Include="engine\CheckSpam.cs" />
+    <Compile Include="engine\CreateIMG.cs" />
+    <Compile Include="engine\CreateVideo.cs" />
+    <Compile Include="engine\GetPostNews.cs" />
+    <Compile Include="engine\LoadConf.cs" />
+    <Compile Include="engine\ParserTAG.cs" />
+    <Compile Include="engine\ProcessingText.cs" />
+    <Compile Include="engine\TextReplace.cs" />
+    <Compile Include="engine\VK_API\news.cs" />
+    <Compile Include="engine\VK_API\PhotoEdit.cs" />
+    <Compile Include="engine\VK_API\PostAPI.cs" />
+    <Compile Include="engine\VK_API\UserGet.cs" />
+    <Compile Include="engine\VK_API\WallPost.cs" />
+    <Compile Include="engine\VK_API\Upload.cs" />
+    <Compile Include="engine\VK_API\UploadURL.cs" />
+    <Compile Include="engine\VK_API\VideoADD.cs" />
+    <Compile Include="engine\VK_API\VideoEdit.cs" />
+    <Compile Include="InfoClass\account.cs" />
+    <Compile Include="InfoClass\GroupList.cs" />
+    <Compile Include="InfoClass\GroupPost.cs" />
+    <Compile Include="InfoClass\Image.cs" />
+    <Compile Include="InfoClass\news.cs" />
+    <Compile Include="InfoClass\Video.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="256.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

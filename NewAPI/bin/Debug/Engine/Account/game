@@ -1,0 +1,23 @@
+﻿UsrerToken:82c6f00fc1dec5c2d6098c8326h34g7d60b49b27b2b0283c2618d37e63afc80997446ccb226d00d0888d8;      //Токен основного аккаунта
+ModerationToken:72150d20852de099b67fef040f4dea4c31ea53384fbdba416b5a92324f6241d94a0f521529a1490990139; //Токен для модерации новостей
+id:game;                          //Хеш фоток, ластаймы и парсер тегов формируються именно поэтому ID
+Activ:true;                   
+ReplaceTag:true;                  //Вырезать чужие hash теги # из новостей
+UploadPhoto:true;                 //Задивать фотографии
+AddVideo:true;                    //Добовлять видео себе в аккаунт
+CreateDescVideo:true;             //Менять описание у видео
+AES:{false,'DefaultKey'};         //Ставиться описание откуда была взята новость под каждой фотографией в шифрованном виде
+GroupPost:{-58772577,-58772578};  //Куда добовлять новости, через запятую можно указать несколько групп, (группы и публичные страницы  указывать со знаком -)
+GroupKey:{game};                  //Ключи общий список, через запятую можно указать несколько файлов
+GroupList:{game};                 //Списки групп откуда брать новости, через запятую можно указать несколько файлов
+KeyText:{false,'count:5'};        //Ставить ключи под оригинальным текстом (KeyWall в данном случаи не учитывается)
+KeyWall:{true,'count:5'};         //Ставить ключи если в новости нету текста (count = количиство ключей)
+KeyPhoto:{true,'count:15'};       //Ставить ключи под каждую фотографию (count = количиство ключей)
+KeyVideo:{true,'count:20'};       //Ставить ключи под каждое видео (count = количиство ключей)
+StopWords:{other};                //Список стоп слов
+Random:4,8;  				      //Перерыв между публикацией новостей в секундах
+Url:{false,'http:\/\/igromania.ru\/','Игры','<br><br>'}   //Ссылка
+
+
+//Токен можно получить перейдя по ссылке
+//https://oauth.vk.com/authorize?client_id=3087106&scope=wall,photos,audio,video,docs,notes,groups,notifications,stats,ads,notify,friends,offline&redirect_uri=https://oauth.vk.com/blank.html&display=popup&response_type=token
