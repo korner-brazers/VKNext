@@ -2,7 +2,9 @@ VKNext 0.2
 ======
 Программа для граббинга групп Вконтакте, консольный проект для Linux.
 ======
+
 Скомпилированный проект находиться в папке: NewAPI\bin\Debug
+
 ======
 Установка для windows 7/8: 
 Установить .NET Framework 4.5: http://www.microsoft.com/ru-ru/download/details.aspx?id=40779
