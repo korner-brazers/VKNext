@@ -25,6 +25,6 @@ certmgr -ssl https://google.com<br>
 certmgr -ssl https://google.com.ua<br>
 certmgr -ssl https://yandex.com<br>
 
-Запуск<br>
+Запуск:<br>
 <b>mono NewAPI.exe</b> или <b>mono --runtime=v4.0.30319 NewAPI.exe</b><br>
 
