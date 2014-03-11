@@ -56,7 +56,7 @@ namespace NewAPI.engine
                                     string attachments = new Attachments().get(ImgUrl, news, video, GroupList, GroupPost, account);
 
                                     //Публикуем новость и чистим ресурсы
-                                    new engine.VK_API.WallPost().put(GroupList, GroupPost, account, (message == null || message.Replace(" ", "").Trim() == "" ? null : Regex.Replace(Regex.Replace(message, @"\n +\n", "\n\n"), "[\n]+#", "\n#")), attachments, news.post_id, news.source_id);
+                                    new engine.VK_API.WallPost().put(GroupList, GroupPost, account, (message == null || message.Replace(" ", "").Trim() == "" ? null : Regex.Replace(Regex.Replace(message, @"\n +\n", "\n\n"), "[\n]+#", "\n#")).Replace("<br>", "\n"), attachments, news.post_id, news.source_id);
                                     attachments = null; message = null; NewsText = null; MessageURL = null; KeyText = null;
                                 }
                                 ImgUrl = null;

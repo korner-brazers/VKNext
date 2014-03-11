@@ -43,7 +43,7 @@ namespace NewAPI.engine
             }
 
             //Возвращаем результат
-            string MessageURL = account.URL_Text != null ? account.URL_Text : "";
+            string MessageURL = account.URL_Text != null ? account.URL_Text.Replace("<br>", "\n").Trim() : "";
             key = null; rng = null; account = null;
             return result.Replace("<br>", "\n").Trim() + MessageURL;
         }
