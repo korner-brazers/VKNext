@@ -20,7 +20,7 @@ VKNext 0.2
 
 ======
 <b>Установка для Linux:</b><br>
-Установить mono и два пакета libphash0 libphash0-dev, для примера возмем Debian
+Установить <b>mono</b> и два пакета <b>libphash0 libphash0-dev</b>, для примера возмем Debian<br>
 echo "deb http://debian.meebey.net/experimental/mono /" >> /etc/apt/sources.list<br>
 apt-get update<br>
 apt-get install mono-complete libphash0 libphash0-dev<br>
