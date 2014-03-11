@@ -1,6 +1,6 @@
 VKNext 0.2
 ======
-Ошибки, вопросы, предложения писать сюда: https://github.com/korner-brazers/VKNext/issues
+[Ошибки, вопросы, предложения](https://github.com/korner-brazers/VKNext/issues)
 ======
 Программа для граббинга групп Вконтакте, консольный проект для Linux.<br>
 Скомпилированный проект находиться в папке: \NewAPI\bin\Debug\ <br>
