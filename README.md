@@ -4,12 +4,12 @@ VKNext 0.2
 Скомпилированный проект находиться в папке: \NewAPI\bin\Debug\ <br>
 
 ======
-Установка для windows 7/8: <br>
+<b>Установка для windows 7/8:</b> <br>
 Установить .NET Framework 4.5: http://www.microsoft.com/ru-ru/download/details.aspx?id=40779<br>
 Установить <b>vcredist_x86.exe</b> который находиться в проекте или скачать с сайта "Распространяемые пакеты Visual C++ для Visual Studio 2013 x86 - http://www.microsoft.com/ru-ru/download/details.aspx?id=40784"<br>
 
 ======
-Установка для Linux:<br>
+<b>Установка для Linux:</b><br>
 echo "deb http://debian.meebey.net/experimental/mono /" >> /etc/apt/sources.list<br>
 apt-get update<br>
 apt-get install mono-complete libphash0 libphash0-dev<br>
@@ -26,5 +26,5 @@ certmgr -ssl https://google.com.ua<br>
 certmgr -ssl https://yandex.com<br>
 
 Запуск<br>
-mono NewAPI.exe или mono --runtime=v4.0.30319 NewAPI.exe<br>
+<b>mono NewAPI.exe</b> или <b>mono --runtime=v4.0.30319 NewAPI.exe</b><br>
 
