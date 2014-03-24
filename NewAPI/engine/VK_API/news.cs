@@ -12,12 +12,12 @@ namespace NewAPI.engine.VK_API
         {
             List<string> TempTag = new List<string> { };
             List<InfoClass.news> News = new List<InfoClass.news> { };
-            XDocument xml = null;
 
             try
             {
                 string captcha = "";
-                Refresh: xml = XDocument.Load("https://api.vk.com/method/wall.get.xml?owner_id=" + GroupList.GroupID + captcha + "&count=100&filter=owner&access_token=" + account.token);
+                //XElement.Parse();
+                Refresh: XDocument xml = XDocument.Load("https://api.vk.com/method/wall.get.xml?owner_id=" + GroupList.GroupID + captcha + "&count=100&filter=owner&access_token=" + account.token);
                 foreach (XElement el in xml.Root.Elements())
                 {
                     if (el.Name.ToString().ToLower() == "error_msg" && el.Value.ToLower().Replace(" ", "") == "userauthorizationfailed:invalidaccess_token.")
@@ -166,14 +166,16 @@ namespace NewAPI.engine.VK_API
                     }
                 }
                 new ParserTAG().get(TempTag, account);
-                TempTag = null; captcha = null;
+                TempTag = null; captcha = null; xml = null; 
             }
-            catch (Exception e) 
-            { 
-                Console.WriteLine("error: Ошибка получения новостей, UsreID: {0}, ID: {1}, группа: {2}", account.UserID, account.id, GroupList.GroupID); 
+            catch (FileNotFoundException) { }
+            catch (Exception e)
+            {
+                Console.WriteLine("error: Ошибка получения новостей, UsreID: {0}, ID: {1}, группа: {2}", account.UserID, account.id, GroupList.GroupID);
                 if (e != null)
                     Console.WriteLine("Код ошибки: {1}{0}{1}{1}", e, Environment.NewLine);
             }
+            catch { }
 
 
             //Записываем LastTime
@@ -197,7 +199,7 @@ namespace NewAPI.engine.VK_API
             }
 
             //Чистим ресурсы 
-            account = null; GroupList = null; xml = null; dir = null;
+            account = null; GroupList = null; dir = null;
             return News;
         }
     }
