@@ -17,7 +17,7 @@ namespace NewAPI.engine.VK_API
             {
                 string captcha = "";
                 //XElement.Parse();
-                Refresh: XDocument xml = XDocument.Load("https://api.vk.com/method/wall.get.xml?owner_id=" + GroupList.GroupID + captcha + "&count=100&filter=owner&access_token=" + account.token);
+                Refresh: XDocument xml = XDocument.Load("https://api.vk.com/method/wall.get.xml?owner_id=" + GroupList.GroupID + captcha + "&count=10&filter=owner&access_token=" + account.token);
                 foreach (XElement el in xml.Root.Elements())
                 {
                     if (el.Name.ToString().ToLower() == "error_msg" && el.Value.ToLower().Replace(" ", "") == "userauthorizationfailed:invalidaccess_token.")
